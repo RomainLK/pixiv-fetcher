@@ -1,4 +1,3 @@
-/*global GM_xmlhttpRequest: true */
 // ==UserScript==
 // @name           Reverse Pixiv
 // @version 1.0.0
@@ -10,6 +9,7 @@
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @licence       MIT http://opensource.org/licenses/MIT
 // ==/UserScript==
+/*global GM_xmlhttpRequest: true*/
 
 
 
