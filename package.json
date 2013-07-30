@@ -1,0 +1,24 @@
+{
+  "name": "pixiv-fetcher",
+  "version": "1.1.2",
+  "description": "A collection of GreaseMonkey script",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RomainLK/pixiv-fetcher.git"
+  },
+  "keywords": [
+    "Pixiv",
+    "GreaseMonkey",
+    "Romanji"
+  ],
+  "author": "Merun",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.2"
+  }
+}

@@ -1,0 +1,2 @@
+{"ts":1375210901866,"silentsave":true,"restoring":false,"patch":[[]],"length":0}
+{"contributors":[],"silentsave":false,"ts":1375211449706,"patch":[[{"diffs":[[1,"module.exports = function(grunt) {\r\n\r\n  grunt.initConfig({\r\n    pkg: grunt.file.readJSON('package.json'),\r\n    uglify : {\r\n    \tmain:{\r\n    \t\tfiles: {\r\n    \t\t\t'build/output.min.user.js' : ['src/*']\r\n    \t\t}\r\n    \t}\r\n    }\r\n  });\r\n  \r\ngrunt.loadNpmTasks('grunt-contrib-uglify');"]],"start1":0,"start2":0,"length1":0,"length2":277}]],"length":277,"saved":false}
