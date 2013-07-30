@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name           Reverse Pixiv
-// @version 1.0.0
+// @version 1.0.1
 // @namespace      http://e-shuushuu.net
 // @description    Add romanized artist name to Pixiv pages
 // @include        http://e-shuushuu.net*
-// @updateURL      http://claritism.com/pixivf/reverse-pixiv.user.js
+// @updateURL      https://github.com/RomainLK/pixiv-fetcher/raw/master/build/reverse-pixiv.min.user.js
 // @grant GM_xmlhttpRequest
 // @require       http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js
 // @licence       MIT http://opensource.org/licenses/MIT
@@ -31,7 +31,7 @@ filename.each(function(index, item){
                         method: 'GET',
                         url: 'http://pixivfetcher-claritism.rhcloud.com/artist/' + id[0] ,
                         onload: function(result) {
-                            var artist = JSON.parse(result.response);
+                            var artist = JSON.parse(result.responseText);
                             if(artist.romanji !== null){
                                 var span = $('<span>').text(artist.romanji).css({
                                     'margin-left' : '10px',

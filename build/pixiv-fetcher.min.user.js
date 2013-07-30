@@ -6,7 +6,7 @@
 // @namespace     http://e-shuushuu.net
 // @description   Add romanized artist name to Pixiv pages
 // @include       http://www.pixiv.net/*
-// @updateURL     http://claritism.com/pixivf/pixiv_fetcher.user.js
+// @updateURL     https://github.com/RomainLK/pixiv-fetcher/raw/master/build/pixiv-fetcher.min.user.js
 // @grant         GM_xmlhttpRequest 
 // @grant         GM_getValue
 // @grant         GM_setValue
