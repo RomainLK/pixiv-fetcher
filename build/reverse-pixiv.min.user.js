@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Reverse Pixiv
-// @version 1.0.1
+// @version 1.1.0
 // @namespace      http://e-shuushuu.net
 // @description    Add romanized artist name to Pixiv pages
 // @include        http://e-shuushuu.net*
@@ -10,4 +10,4 @@
 // @licence       MIT http://opensource.org/licenses/MIT
 // ==/UserScript==
 /*global GM_xmlhttpRequest: true*/
-var filename=$("dt:contains(Original Filename:)").next();filename.each(function(a,b){var c=$(b),d=c.text().match(/^\d+(_big)?(_p\d+)?(\.jpg|\.png|\.gif)$/);if(null!==d){d=d[0].match(/\d+/);var e=$("<a>").attr("href","http://www.pixiv.net/member_illust.php?mode=medium&illust_id="+d[0]).text(c.text());c.text("").append(e),GM_xmlhttpRequest({method:"GET",url:"http://www.pixiv.net/member_illust.php?mode=medium&illust_id="+d[0],onload:function(a){var b=a.responseText.match(/href="\/member\.php\?id=[0-9]+/),d=b[0].match(/\d+$/);GM_xmlhttpRequest({method:"GET",url:"http://pixivfetcher-claritism.rhcloud.com/artist/"+d[0],onload:function(a){var b=JSON.parse(a.responseText);if(null!==b.romanji){var d=$("<span>").text(b.romanji).css({"margin-left":"10px","font-style":"italic"});c.append(d)}}})}})}});
+function process(a){var b=$(a),c=b.text().match(/^\d+((_big)|(_m))?(_p\d+)?(\.jpg|\.png|\.gif)$/);if(null!==c){c=c[0].match(/\d+/);var d=$("<a>").attr("href","http://www.pixiv.net/member_illust.php?mode=medium&illust_id="+c[0]).text(b.text());b.text("").append(d),GM_xmlhttpRequest({method:"GET",url:"http://www.pixiv.net/member_illust.php?mode=medium&illust_id="+c[0],onload:function(a){var c=a.responseText.match(/href="\/member\.php\?id=[0-9]+/),d=c[0].match(/\d+$/);GM_xmlhttpRequest({method:"GET",url:"http://pixivfetcher-claritism.rhcloud.com/artist/"+d[0],onload:function(a){var c=JSON.parse(a.responseText);if(null!==c.romanji){var d=$("<span>").text(c.romanji).css({"margin-left":"10px","font-style":"italic"});b.append(d)}}})}})}}var filename=$("dt:contains(Original Filename:)").next();filename.each(function(a,b){process(b)}),$(document).bind("DOMNodeInserted",function(a){console.log(a.target," was inserted");var b=$(a.target).find("dt:contains(Original Filename:)").next();b.each(function(a,b){process(b)})});

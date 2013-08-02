@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name           Reverse Pixiv
-// @version 1.0.1
+// @version 1.1.0
 // @namespace      http://e-shuushuu.net
 // @description    Add romanized artist name to Pixiv pages
 // @include        http://e-shuushuu.net*
@@ -12,11 +12,9 @@
 /*global GM_xmlhttpRequest: true*/
 
 
-
-var filename = $('dt:contains(Original Filename:)').next();
-filename.each(function(index, item){
+function process(item){
     var node = $(item);
-    var imageId = node.text().match(/^\d+(_big)?(_p\d+)?(\.jpg|\.png|\.gif)$/);
+    var imageId = node.text().match(/^\d+((_big)|(_m))?(_p\d+)?(\.jpg|\.png|\.gif)$/);
     if( imageId !== null ) {
         imageId = imageId[0].match(/\d+/);
         var link = $('<a>').attr('href','http://www.pixiv.net/member_illust.php?mode=medium&illust_id=' + imageId[0]).text(node.text());
@@ -45,4 +43,17 @@ filename.each(function(index, item){
         });
         
     }
+}
+var filename = $('dt:contains(Original Filename:)').next();
+filename.each(function(index, item){
+	process(item);
 });
+
+$(document).bind('DOMNodeInserted', function(e) {
+    console.log(e.target, ' was inserted');
+	var newdd = $(e.target).find('dt:contains(Original Filename:)').next();
+	newdd.each(function(index,item){
+		process(item);
+	});
+});
+
