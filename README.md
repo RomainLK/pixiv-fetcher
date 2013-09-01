@@ -2,19 +2,19 @@
 This project regroup a few GreaseMonkey script to be used with MoeDB.
 
 **Warning:**
-At the moment, Pixiv Fetcher's authentified feature are not secure on the client side.
+At the moment, Pixiv Fetcher's authentified features are not secure on the client side.
 
 #Pixiv Fetcher
 First script to be born in 2011, it will display the romanized of an artist if available. Can also connect to MoeDB and enable update of the database directly from Pixiv
 
 ##TODO
-* Implement Oauth
+* Implement API key
 
 #Reverse Pixiv
 For imageboard where the original filename is available, a link will be auto created to Pixiv, and it will even try to get the romanized name from MoeDB. This also mean that the script will make a request to Pixiv first to get the id.
 
 ##TODO
-* Add autopagerize support
+
 
 #MIT License
 Copyright (c) 2011-2013 RomainLK
