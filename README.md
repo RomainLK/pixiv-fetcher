@@ -17,7 +17,7 @@ For imageboard where the original filename is available, a link will be auto cre
 * Add autopagerize support
 
 #MIT License
-Copyright (c) 2011-2013 Merun
+Copyright (c) 2011-2013 RomainLK
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

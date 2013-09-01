@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name           Reverse Pixiv
 // @version 1.1.0
-// @namespace      http://e-shuushuu.net
+// @namespace      http://moedb.cc
 // @description    Add romanized artist name to Pixiv pages
 // @include        http://e-shuushuu.net*
 // @updateURL      https://github.com/RomainLK/pixiv-fetcher/raw/master/build/reverse-pixiv.min.user.js

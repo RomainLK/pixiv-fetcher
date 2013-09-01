@@ -1,9 +1,9 @@
 // ==UserScript==
 // @name           Pixiv Fetcher
 // @version 1.2.0
-// @copyright     Copyright (c) <2011-2013> Merun
+// @copyright     Copyright (c) <2011-2013> RomainLK
 // @license       MIT http://opensource.org/licenses/MIT
-// @namespace     http://e-shuushuu.net
+// @namespace     http://moedb.cc
 // @description   Add romanized artist name to Pixiv pages
 // @include       http://www.pixiv.net/*
 // @updateURL     https://github.com/RomainLK/pixiv-fetcher/raw/master/build/pixiv-fetcher.min.user.js
